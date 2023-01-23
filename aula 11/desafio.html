@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+</head>
+<body>
+    <h1>Sistema de Nacionalidade</h1>
+    Informe o país de seu Nascimento: <input type="text" name="txtpais" id="txtpais">
+    <input type="button" value="Verificar" onclick="averiguar()">
+    <div id="res">
+        
+    </div>
+    <script>
+        function averiguar(){
+            var pais = window.document.querySelector('input#txtpais')
+            var rel = window.document.querySelector('div#res')
+            var nasc = String(pais.value)
+            rel.innerHTML = `<p>Seu país de nascimento é: <strong>${nasc}</strong></p>`
+            if (nasc == 'brasil' ){
+                rel.innerHTML += `<p>você é: <strong>Brasileiro</strong></p>`
+            } else {
+                rel.innerHTML += `<p>você é: <strong>Estrangeiro</strong></p>`
+            }
+        }
+    </script>
+</body>
+</html>
